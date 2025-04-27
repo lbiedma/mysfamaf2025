@@ -110,6 +110,7 @@ def poisson_ayr(lamb, k):
     qy = PY(lamb, y)
     while u >= PX(lamb, k, y) / (c * qy):
         y = poisson(lamb)
+        qy = PY(lamb, y)
         u = random()
     return y
 
