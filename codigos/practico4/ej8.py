@@ -72,9 +72,10 @@ def poisson_truncada_mej(lamb, k):
     S = sumatoria(lamb, k)
     p = math.exp(-1 * lamb) / S 
     F = p
-    for j in range(int(lamb)):
+    for j in range(min(int(lamb), k)):
         p *= lamb / j
         F += p
+
     j = int(lamb)
     u = random()
     if u < F:
